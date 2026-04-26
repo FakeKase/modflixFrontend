@@ -1,15 +1,20 @@
+.modflixLogo{
+    display: inline-block;
+    padding-top: 30px;
+}
+
 .modLogo {
-    width: 329px;
-    height: 272;
     position: relative;
-    top: 15%;
-    right: -55%;
     margin: 0;
+    bottom: 30px;
+    left: 60%;
 }
 
 .modflixText {
-        color: #FFFFFF;
-        font-size: 128px;
-        position: relative;
-        top: -20%;       
+    position: relative;
+    color: #FFFFFF;
+    font-size: 128px; 
+    margin: 0;
+    z-index: 1;
+    top: -200px;
 }

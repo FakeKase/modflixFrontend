@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai+Looped:wght@100..900&display=swap');
+body {
+    background-color: #000000;
+    font-family: 'Noto Sans Thai Looped', sans-serif;
+}
+
+.headerContainer {
+    /* border: 1px solid #FFFFFF; */
+    width: 100%;
+    height: auto;
+    position: fixed;
+    display: inline-flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    box-sizing: border-box; 
+    padding-right: 50px;
+    padding-left: 50px;
+    margin-top: 10px;
+}
+
+.navbarContainer {
+    /* border: 1px solid #FFFFFF; */
+    height: auto;
+    display: inline-flex;
+    margin-top : 20px;
+    gap: 50px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbarText {
+    color: #FFFFFF;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+}
+
+.navbarText h1 {
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 30px;
+    cursor: pointer;
+    margin: 0;
+    transition: font-size 0.2s ease;
+}
+
+.navbarText h1:hover{
+    font-size: 34px;
+    
+}
+
+.reportList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: absolute;
+    display: none;
+    left: 0;
+    min-width: 120px;
+}
+
+.reportList:hover .dropdown {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown ul{
+    font-size: 20px;
+    padding: 0px 10px;
+    margin: 5px;
+    cursor: pointer;
+    list-style: none;
+    text-align: left;
+    transition: font-size 0.2s ease;
+}
+
+.dropdown ul:hover {
+    font-size: 22px;
+    padding: 10px;
+    border: 2px solid #414141;
+    border-radius: 15px;
+}
+
+.logo {
+    width: 147.56px;
+    height: 74px;
+}
+
+.navbarProfile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.profilePic {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%; 
+}
+
+.username {
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 24px;
+}

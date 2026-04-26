@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import './App.css'
 import LoginPage from './LoginPage/LoginPage.jsx'
+import LandingPage from './LandingPage/LandingPage.jsx'
 import Background from './Background/Background.jsx'
 import Logo from './Logo/Logo.jsx'
+import mockProfilePic from './assets/rigbyMockProfilePic.png'
 
 function App() {
 
@@ -12,7 +14,7 @@ function App() {
       return (
         <>
             <Background></Background>
-            <LoginPage></LoginPage>
+            <LoginPage loginState={setLogIn}></LoginPage>
         </>
       )
   }
@@ -20,6 +22,7 @@ function App() {
     return(
       <>
         <Background></Background>
+        <LandingPage pic={mockProfilePic} username='Noobmaster69'></LandingPage>
       </>
     );
   }

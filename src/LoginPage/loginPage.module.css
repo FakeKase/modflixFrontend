@@ -15,23 +15,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding: 3%;
-}
-
-.modLogo {
-    width: 329px;
-    height: 272;
-    position: relative;
-    top: 15%;
-    right: -55%;
-    margin: 0;
-}
-
-.modflixText {
-        color: #FFFFFF;
-        font-size: 128px;
-        position: relative;
-        top: -20%;       
+    z-index: 1;
 }
 
 .adminText {
@@ -40,7 +26,7 @@ body {
     position: relative;
     font-weight: 400;
     top: -30%;
-    padding: 10px;
+    padding: 30px;
 }
 
 .toLogin {
@@ -56,4 +42,5 @@ body {
     border-radius: 25px;
     font-weight: 700;
     cursor: pointer;
+    z-index: 5;
 }
