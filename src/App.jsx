@@ -22,7 +22,7 @@ function App() {
     return(
       <>
         <Background></Background>
-        <LandingPage pic={mockProfilePic} username='fakekase'></LandingPage>
+        <LandingPage pic={mockProfilePic} username='LetmeuseKase'></LandingPage>
       </>
     );
   }

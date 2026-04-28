@@ -30,6 +30,8 @@ export default function LandingPage({pic, username = 'Guest'})
                     <h1 className={styles.username}>{username.length > 10 ? username.slice(0, 10) + '...' : username}</h1>
                 </div>
             </div>
+            <h1 className={styles.dashboardText}>Dashboard</h1>
+            <div className={styles.reportContainer}></div>
         </>
     );
 }
