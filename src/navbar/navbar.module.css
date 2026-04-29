@@ -7,13 +7,15 @@
     text-align: center;
     align-items: center;
     box-sizing: border-box; 
-    padding-right: 4%;
+    padding-right: 10%;
     margin-top: 45px;
-    flex-wrap: wrap;
-    gap: 10px;
+    flex-wrap: nowrap;
+    gap: 0;
 }
 
 .navbarContainer {
+    width: 80%;
+    max-width: 100%;
     height: auto;
     display: inline-flex;
     text-align: center;
@@ -94,16 +96,29 @@
     display: flex;
     align-items: center;
     gap: 20px;
+    min-width: 0;
+    overflow: visible;
 }
 
 .profilePic {
     width: clamp(40px, 5vw, 60px);
     height: clamp(40px, 5vw, 60px);
-    border-radius: 50%; 
+    border-radius: 50%;
+    flex-shrink: 0;
+    transition: scale 200ms ease;
 }
+
+.profilePic:hover {
+    scale: 1.2;
+}
+
 
 .username {
     color: #FFFFFF;
     font-weight: 400;
     font-size: clamp(16px, 1.8vw, 24px);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    min-width: 0;
 }
