@@ -9,10 +9,6 @@ body {
 
 .loginContainer {
     position: relative;
-}
-
-.loginContainer {
-    position: relative;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -22,11 +18,13 @@ body {
 
 .logo {
     position: relative;
+    width: min(500px, 40vw);
+    height: auto;
 }
 
 .adminText {
     color: #FFFFFF;
-    font-size: 40px;
+    font-size: clamp(20px, 3vw, 40px);
     margin-top: 0;
     margin-bottom: 5%;
     position: relative;
@@ -38,9 +36,9 @@ body {
     background-color: #FF6700;
     color: #FFFFFF;
     position: relative;
-    width: 516px; 
-    height: 116px;
-    font-size: 48px;
+    width: min(516px, 80vw);
+    height: clamp(60px, 10vh, 116px);
+    font-size: clamp(24px, 4vw, 48px);
     border: 5px solid #FF6700;
     border-radius: 25px;
     font-weight: 700;
