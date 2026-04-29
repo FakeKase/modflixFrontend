@@ -9,6 +9,8 @@
     box-sizing: border-box; 
     padding-right: 4%;
     margin-top: 45px;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .navbarContainer {
