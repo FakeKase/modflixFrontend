@@ -20,9 +20,14 @@ body {
     width: 90%;
     max-width: 1440px;
     height: auto;
-    min-height: 600px;
+    min-height: 650px;
     background-color: #FFD7B5;
     margin: 0 auto;
     margin-bottom: 72px;
     border-radius: 50px;
+    overflow: hidden;
+    padding-top: 1px;
+    display: flex;
+    justify-content: center;
+    gap: 5%;
 }
