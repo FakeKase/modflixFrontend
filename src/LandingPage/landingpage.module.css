@@ -2,8 +2,8 @@
 body {
     background-color: #000000;
     font-family: 'Noto Sans Thai Looped', sans-serif;
-    overflow-y: auto;   /* add this */
-    min-height: 100vh;  /* add this */
+    overflow-x: hidden;
+    min-height: 100vh;
 }
 
 .headerContainer {
@@ -17,7 +17,7 @@ body {
     align-items: center;
     box-sizing: border-box; 
     padding-right: 60px;
-    margin-top: 10px;
+    margin-top: 45px;
 }
 
 .navbarContainer {
@@ -132,12 +132,13 @@ body {
 }
 
 .reportContainer {
+    width: calc(100% - 280px);
     width: 1440px;
-    height: 646px;
+    height: 712px;
     background-color: #FFD7B5;
     margin-left: 140px;
     margin-right: 140px;
     margin-top: 0px;
-    margin-bottom: 72px;
     border-radius: 50px;
+    margin-bottom: 72px; /* temp test */
 }

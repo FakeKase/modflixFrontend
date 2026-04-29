@@ -4,6 +4,7 @@
 }
 
 .modLogo {
+    border: 1px solid #FFFFFF;
     position: relative;
     margin: 0;
     bottom: 30px;
@@ -11,6 +12,7 @@
 }
 
 .modflixText {
+    border: 1px solid #FFFFFF;
     position: relative;
     color: #FFFFFF;
     font-size: 128px; 

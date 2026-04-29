@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {useState, useEffect} from 'react'
 import './App.css'
 import LoginPage from './LoginPage/LoginPage.jsx'
 import LandingPage from './LandingPage/LandingPage.jsx'
@@ -9,6 +9,15 @@ import mockProfilePic from './assets/rigbyMockProfilePic.png'
 function App() {
 
   const [isLoggedIn, setLogIn] = useState(false)
+
+  useEffect(() => {
+        if (!isLoggedIn) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    }, [isLoggedIn]);
+
   if(!isLoggedIn)
   {
       return (
