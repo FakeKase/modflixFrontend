@@ -98,6 +98,7 @@
     gap: 20px;
     min-width: 0;
     overflow: visible;
+    transition: scale 200ms ease;
 }
 
 .profilePic {
@@ -105,11 +106,10 @@
     height: clamp(40px, 5vw, 60px);
     border-radius: 50%;
     flex-shrink: 0;
-    transition: scale 200ms ease;
 }
 
-.profilePic:hover {
-    scale: 1.2;
+.navbarProfile:hover {
+    scale: 1.1;
 }
 
 
