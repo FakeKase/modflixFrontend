@@ -11,7 +11,7 @@ body {
     width: fit-content;
     height: fit-content;
     font-size: clamp(24px, 3vw, 40px);
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 45px;
     margin-left: 9%;
     color: #FFFFFF;
