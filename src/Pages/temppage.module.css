@@ -29,6 +29,7 @@ body {
     overflow: hidden;
     padding: 20px 3%;
     box-sizing: border-box;
+    padding: 20px 3% 40px 3%;
 }
 
 /* ── Top bar ── */
@@ -98,6 +99,8 @@ body {
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    margin: 0 1%;
+    margin-bottom: 10px
 }
 
 /* ── Table ── */
@@ -108,12 +111,13 @@ body {
 }
 
 .table thead tr {
-    border-bottom: 2px solid #F0E0D0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
 }
 
 .table th {
-    padding: 16px 20px;
-    text-align: left;
+    padding: 16px 40px;
+    text-align: center;
     font-size: clamp(22px, 1vw, 24px);
     font-weight: 600;
     color: #595959;
@@ -129,10 +133,13 @@ body {
 }
 
 .table td {
-    padding: 14px 20px;
-    font-size: clamp(22px, 1.2vw, 24px);
+    padding: 14px 70px;
+    margin: 0;
+    font-size: clamp(20px, 1.2vw, 22px);
     color: #333333;
     border-bottom: 1px solid #F5EDE6;
+    white-space: nowrap;
+    vertical-align: middle;
 }
 
 .table tbody tr:last-child td {
@@ -150,7 +157,7 @@ body {
 /* ── Cell variants ── */
 .codeCell {
     color: #FF6B00 !important;
-    font-weight: 600;
+    font-weight: 800;
 }
 
 .priceCell {
@@ -161,6 +168,8 @@ body {
     display: flex;
     gap: 8px;
     align-items: center;
+    justify-content: center;
+    height: auto;
 }
 
 /* ── Action buttons ── */
@@ -168,7 +177,7 @@ body {
     background-color: transparent;
     border: 1.5px solid #595959;
     border-radius: 35px;
-    padding: 5px 16px;
+    padding: 5px 20px;
     cursor: pointer;
     font-size: clamp(14px, 1.2vw, 16px);
     font-family: inherit;
@@ -183,7 +192,7 @@ body {
 
 .deleteBtn {
     background-color: transparent;
-    border: 1.5px solid #FF4444;
+    border: 2px solid #FF4444;
     border-radius: 35px;
     padding: 5px 16px;
     cursor: pointer;
