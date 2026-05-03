@@ -51,6 +51,8 @@ function App() {
 
     const [data, setData]             = useState(INITIAL_DATA);
 
+    const commonProps = {isLoggedIn, username, pic,};
+
     const [signupUser, setSignupUser] = useState(() => {
         const saved = localStorage.getItem('user');
         return saved ? JSON.parse(saved) : null;
