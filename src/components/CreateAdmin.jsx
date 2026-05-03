@@ -112,27 +112,27 @@ function InfoField({ label, value, filled }) {
 }
 
 const s = {
-  toolbar:   { marginBottom: '16px' },
-  headerBtn: { background: '#e85d00', color: '#fff', border: 'none', borderRadius: '20px', padding: '10px 24px', fontSize: '14px', fontWeight: '700', cursor: 'pointer' },
+  toolbar:   { marginBottom: '20px', marginTop: '70px'},
+  headerBtn: { background: '#e85d00', color: '#fff', border: 'none', borderRadius: '20px', padding: '10px 24px', fontSize: '22px', fontWeight: '700', cursor: 'pointer' },
   body:      { display: 'flex', gap: '32px', alignItems: 'flex-start' },
-  left:      { display: 'flex', flexDirection: 'column', gap: '10px', width: '280px', flexShrink: 0 },
+  left:      { display: 'flex', flexDirection: 'column', gap: '10px', width: '350px', flexShrink: 0 },
   srch:      { display: 'flex', alignItems: 'center', gap: '8px', background: '#f5e6d5', border: '1.5px solid #d0a080', borderRadius: '24px', padding: '10px 16px' },
   srchInput: { border: 'none', outline: 'none', fontSize: '14px', background: 'transparent', width: '100%', color: '#333' },
-  srchBtn:   { background: '#e85d00', color: '#fff', border: 'none', borderRadius: '20px', padding: '8px 20px', fontSize: '13px', fontWeight: '600', cursor: 'pointer', alignSelf: 'flex-start' },
+  srchBtn:   { background: '#e85d00', color: '#fff', border: 'none', borderRadius: '20px', padding: '8px 20px', fontSize: '16px', fontWeight: '600', cursor: 'pointer', alignSelf: 'flex-start' },
   notFound:  { color: '#c0392b', fontSize: '13px' },
   right:     { flex: 1 },
-  userId:    { fontSize: '16px', fontWeight: '700', color: '#333', marginBottom: '16px' },
+  userId:    { fontSize: '20px', fontWeight: '700', color: '#333', marginBottom: '20px' },
   grid:      { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px 24px', marginBottom: '16px' },
   roleWrap:  { display: 'flex', flexDirection: 'column', gap: '6px', width: '50%' },
-  roleLabel: { fontSize: '14px', fontWeight: '700', color: '#333' },
+  roleLabel: { fontSize: '18px', fontWeight: '700', color: '#333' },
   select:    { padding: '8px 12px', borderRadius: '8px', border: '1px solid #ccc', fontSize: '13px', background: '#fff', outline: 'none' },
   error:     { color: '#c0392b', fontSize: '13px', marginTop: '8px' },
-  addBtn:    { background: '#e85d00', color: '#fff', border: 'none', borderRadius: '20px', padding: '10px 40px', fontSize: '14px', fontWeight: '700', cursor: 'pointer' },
+  addBtn:    { background: '#e85d00', color: '#fff', border: 'none', borderRadius: '20px', padding: '10px 40px', fontSize: '20px', fontWeight: '700', cursor: 'pointer' },
 };
 
 const f = {
   wrap:  { display: 'flex', flexDirection: 'column', gap: '4px' },
-  label: { fontSize: '13px', fontWeight: '700', color: '#333' },
+  label: { fontSize: '18px', fontWeight: '700', color: '#333' },
   value: {
     background: '#fff',
     borderRadius: '8px',

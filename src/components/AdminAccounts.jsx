@@ -48,7 +48,7 @@ function AdminAccounts({ data, onAddAdmin, onDelete }) {
               <td style={{ ...s.td, position: 'relative' }}>
                 <Dropdown
                   actions={ACTIONS}
-                  onDelete={() => onDelete(a.id)}  // ✅ ส่ง id ที่จะลบ
+                  onDelete={() => onDelete(a.id)}  // ส่ง id ที่จะลบ
                 />
               </td>
             </tr>

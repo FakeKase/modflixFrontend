@@ -10,14 +10,7 @@ import Background from './Background/Background.jsx'
 import mockProfilePic from './assets/rigbyMockProfilePic.png'
 import AdminProfilePage from './Pages/AdminProfilePage.jsx'
 import ManagementDashboard from './components/ManagementDashboard.jsx';
-
-//ของ management
-import Signup        from './components/Signup.jsx';
-import AdminAccounts from './components/AdminAccounts.jsx';
-import Sessions      from './components/Sessions.jsx';
-import LoginActivity from './components/LoginActivity.jsx';
-import CreateAdmin   from './components/CreateAdmin.jsx';
-import Navbar from './Navbar/Navbar.jsx'; 
+import Signup from './components/Signup.jsx';
 
 //data management
 const INITIAL_DATA = [

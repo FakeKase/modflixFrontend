@@ -46,10 +46,10 @@ const s = {
    dash: {
     background: 'transparent',
     minHeight: '100vh',
-    fontFamily: 'sans-serif',
+    fontFamily: "'Noto Sans Thai Looped', sans-serif",
     position: 'relative',
-    width: '90%',           // ✅ เหมือน reportContainer
-    maxWidth: '1440px',     // ✅ เหมือน reportContainer
+    width: '90%',          
+    maxWidth: '1440px',     
     marginLeft: 'auto',
     marginRight: 'auto',
     marginBottom: '5%',
@@ -63,9 +63,9 @@ const s = {
   },
   tab: {
     flex: 1,
-    padding: '14px 0px',
+    padding: '20px',
     borderRadius: '8px 8px 0px 0px',
-    fontSize: '15px',
+    fontSize: '20px',
     fontWeight: '700',
     border: 'none',
     background: '#5a1a00',
@@ -77,9 +77,9 @@ const s = {
   },
   card: {
     background: '#FFD7B5',
-    borderRadius: '0px 0px 50px 50px',  // ✅ เหมือน reportContainer
-    minHeight: '670px',                  // ✅ เหมือน reportContainer
-    padding: '20px 3% 40px 3%',         // ✅ เหมือน reportContainer
+    borderRadius: '0px 0px 50px 50px', 
+    minHeight: '670px',                  
+    padding: '20px 3% 40px 3%',       
     boxSizing: 'border-box',
     position: 'relative',
     zIndex: 1,
@@ -88,9 +88,9 @@ const s = {
 
   tabOn: {
     flex: 1,
-    padding: '14px 0px',
+    padding: '20px',
     borderRadius: '8px 8px 0px 0px',
-    fontSize: '15px',
+    fontSize: '20px',
     fontWeight: '700',
     border: 'none',
     background: '#e85d00',  // ✅ สีส้มตอน active
