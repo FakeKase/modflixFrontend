@@ -31,17 +31,36 @@
     justify-content: center;
 }
 
-.navbarText h1 {
+/* Reset ALL NavLink anchor defaults */
+.navbarText a {
+    text-decoration: none;
     color: #FFFFFF;
     font-weight: 400;
     font-size: clamp(18px, 2vw, 30px);
     cursor: pointer;
-    margin: 0;
     transition: font-size 0.2s ease;
 }
 
-.navbarText h1:hover {
+.navbarText a:hover {
     font-size: clamp(20px, 2.2vw, 32px);
+}
+
+/* Active page highlight */
+.active {
+    text-decoration: none !important;
+    /*color: #FF6B00 !important;  orange accent matching your theme */
+    font-weight: 600 !important;
+    font-size: clamp(18px, 2vw, 30px);
+}
+
+.active:hover {
+    font-size: clamp(20px, 2.2vw, 32px);
+}
+
+/* Keep individual class hooks in case you need per-item overrides */
+.home, .product, .cast, .customer, .reports, .management {
+    text-decoration: none;
+    color: #FFFFFF;
 }
 
 .reportList {
@@ -64,7 +83,8 @@
     flex-direction: column;
 }
 
-.dropdown ul {
+/* Fixed: was ul, should be a for NavLink */
+.dropdown a {
     font-size: clamp(14px, 1.5vw, 20px);
     padding: 5px;
     margin: 5px;
@@ -72,9 +92,14 @@
     list-style: none;
     text-align: left;
     transition: font-size 0.2s ease;
+    background-color: #000000;
+    text-decoration: none;
+    border-radius: 15px;
+    color: #FFFFFF;
+    display: block;
 }
 
-.dropdown ul:hover {
+.dropdown a:hover {
     font-size: clamp(16px, 1.7vw, 22px);
     padding: 10px;
     border: 2px solid #414141;
@@ -111,7 +136,6 @@
 .navbarProfile:hover {
     scale: 1.1;
 }
-
 
 .username {
     color: #FFFFFF;
