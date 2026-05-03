@@ -24,7 +24,7 @@ export default function CustomerPage({ pic, username }) {
         <TempPage
             pic={pic}
             username={username}
-            title="Cast"
+            title="Customer"
             columns={columns}
             data={data}
             onEdit={(row)   => console.log('Edit',   row)}
