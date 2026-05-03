@@ -4,20 +4,26 @@ import './App.css'
 import LoginPage from './LoginPage/LoginPage.jsx'
 import LandingPage from './LandingPage/LandingPage.jsx'
 import ProductPage from './Pages/ProductPage.jsx'
+import CustomerPage from './Pages/CustomerPage.jsx'
+import CastPage from './Pages/CastPage.jsx'
 import Background from './Background/Background.jsx'
 import mockProfilePic from './assets/rigbyMockProfilePic.png'
 import AdminProfilePage from './Pages/AdminProfilePage.jsx'
 
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false)
+    const [username, setUsername] = useState('LetmeuseKase')
+    const [pic, setPic] = useState(mockProfilePic)
 
     useEffect(() => {
         document.body.style.overflow = isLoggedIn ? '' : 'hidden';
     }, [isLoggedIn]);
 
+    const commonProps = { pic, username };
+
     return (
         <BrowserRouter>
-            <Background />  {/* ← outside Routes, always visible */}
+            <Background />
             <Routes>
                 <Route
                     path="/login"
@@ -31,7 +37,7 @@ function App() {
                     path="/"
                     element={
                         isLoggedIn
-                            ? <LandingPage pic={mockProfilePic} username='LetmeuseKase' />
+                            ? <LandingPage {...commonProps} />
                             : <Navigate to="/login" replace />
                     }
                 />
@@ -39,7 +45,23 @@ function App() {
                     path="/products"
                     element={
                         isLoggedIn
-                            ? <ProductPage pic={mockProfilePic} username='LetmeuseKase' />
+                            ? <ProductPage {...commonProps} />
+                            : <Navigate to="/login" replace />
+                    }
+                />
+                <Route
+                    path="/cast"
+                    element={
+                        isLoggedIn
+                            ? <CastPage {...commonProps} />
+                            : <Navigate to="/login" replace />
+                    }
+                />
+                <Route
+                    path="/customers"
+                    element={
+                        isLoggedIn
+                            ? <CustomerPage {...commonProps} />
                             : <Navigate to="/login" replace />
                     }
                 />
@@ -47,7 +69,7 @@ function App() {
                     path="/admin-profile"
                     element={
                         isLoggedIn
-                            ? <AdminProfilePage pic={mockProfilePic} username='LetmeuseKase' />
+                            ? <AdminProfilePage {...commonProps} onSave={(newUsername) => setUsername(newUsername)} />
                             : <Navigate to="/login" replace />
                     }
                 />

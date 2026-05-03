@@ -1,14 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import AdminProfile from "../AdminProfile/AdminProfile";
-import Navbar from "../Navbar/navbar";
+import Navbar from "../navbar/navbar";
 import mockProfilePic from '../assets/rigbyMockProfilePic.png'
 
-function AdminProfilePage({ pic, username }) {
+function AdminProfilePage({ pic, username, onSave }) {
   const navigate = useNavigate();
 
   return (
     <>
-      <Navbar pic={pic || mockProfilePic} username={username || 'LetmeuseKase'} />
+      <Navbar pic={pic} username={username} />
         <div style={{
             display: "flex",
             justifyContent: "center",
@@ -22,7 +22,7 @@ function AdminProfilePage({ pic, username }) {
           ← Back
         </button> */}
       </div>
-      <AdminProfile pic={pic} username={username}/>
+      <AdminProfile pic={pic} username={username} onSave={onSave}/>
     </>
   );
 }

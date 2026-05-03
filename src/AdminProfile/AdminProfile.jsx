@@ -53,7 +53,7 @@ function Field({ label, field, full, editing, value, draft, onChange, error }) {
   );
 }
 
-function AdminProfile({username= "WINTER", pic}) {
+function AdminProfile({username= "WINTER", pic, onSave}) {
   const [editing, setEditing] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -104,7 +104,8 @@ function AdminProfile({username= "WINTER", pic}) {
   const handleSave = () => { 
     if (!validate()) return; 
     setForm({ ...draft }); 
-    setEditing(false); 
+    setEditing(false);
+    onSave?.(draft.username);
   };
 
   const fields = [

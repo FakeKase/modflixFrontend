@@ -124,6 +124,8 @@
     min-width: 0;
     overflow: visible;
     transition: scale 200ms ease;
+    text-decoration: none;
+    color: inherit;
 }
 
 .profilePic {
@@ -144,5 +146,5 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    min-width: 0;
+    min-width: 150px;
 }
