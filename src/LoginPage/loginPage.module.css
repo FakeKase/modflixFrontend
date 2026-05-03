@@ -22,6 +22,25 @@ body {
     height: auto;
 }
 
+.toSignup {
+  background: transparent;
+  color: #FF6700;
+  border: 5px solid #FF6700;        
+  border-radius: 25px;            
+  width: min(516px, 80vw);         
+  height: clamp(60px, 10vh, 116px); 
+  font-size: clamp(24px, 4vw, 48px);
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 12px;
+  letter-spacing: 1px;
+}
+
+.toSignup:hover {
+  background: #FF6700;
+  color: #fff;
+}
+
 .adminText {
     color: #FFFFFF;
     font-size: clamp(20px, 3vw, 40px);
