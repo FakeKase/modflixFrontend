@@ -9,6 +9,8 @@ import CastPage from './Pages/CastPage.jsx'
 import Background from './Background/Background.jsx'
 import mockProfilePic from './assets/rigbyMockProfilePic.png'
 import AdminProfilePage from './Pages/AdminProfilePage.jsx'
+import UserBehaviorPage from './Pages/UserBehaviorPage.jsx';
+import PopularityPage from './Pages/PopularityPage.jsx';
 
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -25,6 +27,16 @@ function App() {
         <BrowserRouter>
             <Background />
             <Routes>
+                <Route 
+                path="/reports/users" 
+                    element={isLoggedIn
+                            ? <UserBehaviorPage {...commonProps} />
+                            : <Navigate to="/login" replace />
+                            } />
+                <Route path="/reports/popularity" 
+                    element={isLoggedIn
+                            ? <PopularityPage {...commonProps} />
+                            : <Navigate to="/login" replace />} />
                 <Route
                     path="/login"
                     element={
