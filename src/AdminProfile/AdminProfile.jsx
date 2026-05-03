@@ -53,14 +53,14 @@ function Field({ label, field, full, editing, value, draft, onChange, error }) {
   );
 }
 
-function AdminProfile() {
+function AdminProfile({username= "WINTER", pic}) {
   const [editing, setEditing] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [fieldErrors, setFieldErrors] = useState({});
   const [form, setForm] = useState({
     fullName: "KIM MINJEONG",
-    username: "WINTER",
+    username: username,
     birthday: "12/04/2549",
     phone: "0123456789",
     email: "winrina@gmail.com",
@@ -132,7 +132,10 @@ function AdminProfile() {
           <div className="admin-avatar-info">
             <div className="admin-avatar">
               {/* Replace the letter with <img src="..." alt="avatar" /> for a real photo */}
-              {form.username[0]}
+              {pic
+                ? <img src={pic} alt="avatar" />
+                : form.username[0]   // ถ้าไม่มีรูปให้แสดงตัวอักษรแรก
+              }
             </div>
             <div>
               <div className="admin-name">{form.username}</div>

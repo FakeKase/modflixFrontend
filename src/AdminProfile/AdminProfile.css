@@ -1,7 +1,9 @@
 .admin-wrapper {
-  max-width: 1000px;
+  max-width: 1100px;
+  width: 100%;  
   border-radius: 24px;
   overflow: hidden;
+  margin: 0 auto;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25), 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   font-family: 'Noto Sans Thai Looped', sans-serif;
 }
@@ -181,6 +183,7 @@
   outline: none;
   font-family: inherit;
   transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
 }
 
 .field-input:focus {

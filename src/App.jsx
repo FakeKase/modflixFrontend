@@ -6,6 +6,7 @@ import LandingPage from './LandingPage/LandingPage.jsx'
 import ProductPage from './Pages/ProductPage.jsx'
 import Background from './Background/Background.jsx'
 import mockProfilePic from './assets/rigbyMockProfilePic.png'
+import AdminProfilePage from './Pages/AdminProfilePage.jsx'
 
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -39,6 +40,14 @@ function App() {
                     element={
                         isLoggedIn
                             ? <ProductPage pic={mockProfilePic} username='LetmeuseKase' />
+                            : <Navigate to="/login" replace />
+                    }
+                />
+                <Route
+                    path="/admin-profile"
+                    element={
+                        isLoggedIn
+                            ? <AdminProfilePage pic={mockProfilePic} username='LetmeuseKase' />
                             : <Navigate to="/login" replace />
                     }
                 />

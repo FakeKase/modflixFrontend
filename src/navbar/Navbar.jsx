@@ -27,12 +27,12 @@ export default function Navbar({ pic, username = 'Guest' }) {
                     <NavLink to="/management" className={({ isActive }) => isActive ? styles.active : styles.management}>Management</NavLink>
                 </div>
             </div>
-            <div className={styles.navbarProfile}>
+            <NavLink to="/admin-profile" className={styles.navbarProfile}>
                 <img className={styles.profilePic} src={pic || defaultProfilePic} />
                 <h1 className={styles.username}>
                     {username.length > 10 ? username.slice(0, 10) + '...' : username}
                 </h1>
-            </div>
+            </NavLink>
         </div>
     );
 }
