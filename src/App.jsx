@@ -84,7 +84,7 @@ function App() {
 
         const entry = {
             id:     nextId,
-            name:   `${newAdmin.firstName} ${newAdmin.lastName}`.toUpperCase(),
+            name:   newAdmin.fullname.toUpperCase(),
             role:   newAdmin.role || 'ADMIN',
             login:  dateStr,
             email:  newAdmin.email,

@@ -3,7 +3,7 @@ import SearchBar from './SearchBar';
 
 function CreateAdmin({ signupList = [], onAdd, data = [] }) {
   const [search, setSearch]   = useState('');
-  const [found, setFound]     = useState(null);   // ✅ ข้อมูลที่ค้นเจอ
+  const [found, setFound]     = useState(null);   
   const [role, setRole]       = useState('');
   const [error, setError]     = useState('');
   const [notFound, setNotFound] = useState(false);
@@ -69,8 +69,9 @@ function CreateAdmin({ signupList = [], onAdd, data = [] }) {
           <div style={s.userId}>USER ID: {nextId}</div>
 
           <div style={s.grid}>
-            <InfoField label="First Name" value={found ? found.firstName : ''} filled={!!found} />
-            <InfoField label="Last Name"  value={found ? found.lastName  : ''} filled={!!found} />
+            <InfoField label="FULL NAME" value={found ? found.fullname : ''} />
+            <InfoField label="PHONE"     value={found ? found.phone : ''} />
+            <InfoField label="BIRTHDATE" value={found ? found.birthdate : ''} />
             <InfoField label="USERNAME"   value={found ? found.username  : ''} filled={!!found} />
             <InfoField label="EMAIL"      value={found ? found.email     : ''} filled={!!found} />
           </div>
@@ -105,7 +106,7 @@ function InfoField({ label, value, filled }) {
   return (
     <div style={f.wrap}>
       <div style={f.label}>{label}</div>
-      <div style={{ ...f.value, color: filled ? '#333' : '#aaa' }}>{value}</div>
+      <div style={f.value}>{value}</div>
     </div>
   );
 }
@@ -132,7 +133,14 @@ const s = {
 const f = {
   wrap:  { display: 'flex', flexDirection: 'column', gap: '4px' },
   label: { fontSize: '13px', fontWeight: '700', color: '#333' },
-  value: { background: '#fff', borderRadius: '8px', padding: '8px 12px', fontSize: '13px', minHeight: '36px' },
+  value: {
+    background: '#fff',
+    borderRadius: '8px',
+    padding: '8px 12px',
+    fontSize: '13px',
+    minHeight: '36px',
+    color: '#333'
+  },
 };
 
 export default CreateAdmin;

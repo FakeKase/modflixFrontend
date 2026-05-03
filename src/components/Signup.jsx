@@ -8,8 +8,13 @@ import openEye  from '../assets/openpassword.png';
 function Signup({ onSignup, onLoginSuccess }) {
   const navigate = useNavigate();
   const [form, setForm] = useState({
-    email: '', username: '', firstName: '',
-    lastName: '', password: '', confirmPassword: '',
+    email: '',
+    fullname: '',
+    username: '',
+    phone: '',
+    birthdate: '',
+    password: '',
+    confirmPassword: '',
   });
   const [showPass, setShowPass]       = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
@@ -20,7 +25,7 @@ function Signup({ onSignup, onLoginSuccess }) {
   };
 
   const handleSubmit = () => {
-    if (!form.email || !form.username || !form.firstName || !form.lastName || !form.password) {
+    if (!form.email || !form.fullname || !form.username || !form.phone || !form.birthdate || !form.password) {
       setError('กรุณากรอกข้อมูลให้ครบทุกช่อง');
       return;
     }
@@ -46,8 +51,24 @@ function Signup({ onSignup, onLoginSuccess }) {
           {error && <div style={s.error}>{error}</div>}
           <Field label="Email"            value={form.email}           onChange={v => handleChange('email', v)} type="email" />
           <Field label="Username"         value={form.username}        onChange={v => handleChange('username', v)} />
-          <Field label="First Name"       value={form.firstName}       onChange={v => handleChange('firstName', v)} />
-          <Field label="Last Name"        value={form.lastName}        onChange={v => handleChange('lastName', v)} />
+          <Field
+            label="Full Name"
+            value={form.fullname}
+            onChange={v => handleChange('fullname', v)}
+          />
+
+          <Field
+            label="Phone"
+            value={form.phone}
+            onChange={v => handleChange('phone', v)}
+          />
+
+          <Field
+            label="Birthdate"
+            value={form.birthdate}
+            onChange={v => handleChange('birthdate', v)}
+            type="date"
+          />
           <Field
             label="Create Password"
             value={form.password}
