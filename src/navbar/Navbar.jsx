@@ -1,35 +1,38 @@
+import { NavLink } from 'react-router-dom'
 import logoPic from '../assets/Logo.png'
 import defaultProfilePic from '../assets/usericon.png'
 import styles from './navbar.module.css'
 
-export default function Navbar({pic, username = 'Guest'})
-{
+export default function Navbar({ pic, username = 'Guest' }) {
     return (
-        <>
-            <div className={styles.headerContainer}>
-                            <img src={logoPic} className={styles.logo}/>
-                            <div className={styles.navbarContainer}>
-                                <div className={styles.navbarText}>
-                                    <h1 className={styles.home}>Home</h1>
-                                    <h1 className={styles.product}>Products</h1>
-                                    <h1 className={styles.cast}>Cast</h1>
-                                    <h1 className={styles.customer}>Customers</h1>
-                                    <li className={styles.reportList}>
-                                        <h1 className={styles.reports}>Reports</h1>
-                                        <div className={styles.dropdown}>
-                                            <ul>Sales</ul>                       
-                                            <ul>Users</ul>                       
-                                            <ul>Popularity</ul>                       
-                                        </div>
-                                    </li>
-                                    <h1 className={styles.management}>Management</h1>
-                                </div>
-                            </div>        
-                            <div className={styles.navbarProfile}>
-                                <img className={styles.profilePic} src={pic || defaultProfilePic}/>
-                                <h1 className={styles.username}>{username.length > 10 ? username.slice(0, 10) + '...' : username}</h1>
-                            </div>
+        <div className={styles.headerContainer}>
+            <img src={logoPic} className={styles.logo} />
+            <div className={styles.navbarContainer}>
+                <div className={styles.navbarText}>
+                    <NavLink to="/"           className={({ isActive }) => isActive ? styles.active : styles.home}>Home</NavLink>
+                    <NavLink to="/products"   className={({ isActive }) => isActive ? styles.active : styles.product}>Products</NavLink>
+                    <NavLink to="/cast"       className={({ isActive }) => isActive ? styles.active : styles.cast}>Cast</NavLink>
+                    <NavLink to="/customers"  className={({ isActive }) => isActive ? styles.active : styles.customer}>Customers</NavLink>
+
+                    {/* Reports dropdown — keep as li */}
+                    <li className={styles.reportList}>
+                        <NavLink to="/reports" className={({ isActive }) => isActive ? styles.active : styles.reports}>Reports</NavLink>
+                        <div className={styles.dropdown}>
+                            <NavLink to="/reports/sales"      className={styles.dropdownItem}>Sales</NavLink>
+                            <NavLink to="/reports/users"      className={styles.dropdownItem}>Users</NavLink>
+                            <NavLink to="/reports/popularity" className={styles.dropdownItem}>Popularity</NavLink>
                         </div>
-        </>
+                    </li>
+
+                    <NavLink to="/management" className={({ isActive }) => isActive ? styles.active : styles.management}>Management</NavLink>
+                </div>
+            </div>
+            <div className={styles.navbarProfile}>
+                <img className={styles.profilePic} src={pic || defaultProfilePic} />
+                <h1 className={styles.username}>
+                    {username.length > 10 ? username.slice(0, 10) + '...' : username}
+                </h1>
+            </div>
+        </div>
     );
 }
