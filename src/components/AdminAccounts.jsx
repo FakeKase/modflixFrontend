@@ -4,7 +4,7 @@ import Pagination from './Pagination';
 import SearchBar from './SearchBar'; 
 
 
-const ACTIONS = ['Edit', 'Delete', 'Suspend', 'Reset Password'];
+const ACTIONS = ['Delete', 'Suspend'];
 
 function AdminAccounts({ data, onAddAdmin, onDelete }) {
   const [search, setSearch] = useState('');
