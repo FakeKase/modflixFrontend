@@ -125,7 +125,7 @@ const s = {
   grid:      { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px 24px', marginBottom: '16px' },
   roleWrap:  { display: 'flex', flexDirection: 'column', gap: '6px', width: '50%' },
   roleLabel: { fontSize: '18px', fontWeight: '700', color: '#333' },
-  select:    { padding: '8px 12px', borderRadius: '8px', border: '1px solid #ccc', fontSize: '13px', background: '#fff', outline: 'none' },
+  select:    { padding: '8px 12px', borderRadius: '8px', border: '1px solid #ccc', fontSize: '18px', background: '#fff', outline: 'none' },
   error:     { color: '#c0392b', fontSize: '13px', marginTop: '8px' },
   addBtn:    { background: '#e85d00', color: '#fff', border: 'none', borderRadius: '20px', padding: '10px 40px', fontSize: '20px', fontWeight: '700', cursor: 'pointer' },
 };
