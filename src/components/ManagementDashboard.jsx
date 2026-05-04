@@ -15,26 +15,26 @@ function ManagementDashboard({ data, handleDelete, handleAddAdmin, signupList, u
         <Navbar pic={pic || mockProfilePic} username={username || 'LetmeuseKase'} />
         <h1 style={s.Management}>Management</h1>
         <div style={s.dash}>
-        {/* <Navbar
-            pic={null}
-            username={user ? `${user.firstName} ${user.lastName}` : 'Guest'}
-        /> */}
-        <div style={s.tabs}>
+            {/* <Navbar
+                pic={null}
+                username={user ? `${user.firstName} ${user.lastName}` : 'Guest'}
+            /> */}
+            <div style={s.tabs}>
 
-            <NavLink to="/management/admin"          style={({ isActive }) => isActive ? s.tabOn : s.tab}>ADMIN ACCOUNTS</NavLink>
-            <NavLink to="/management/sessions"       style={({ isActive }) => isActive ? s.tabOn : s.tab}>SESSIONS</NavLink>
-            <NavLink to="/management/login-activity" style={({ isActive }) => isActive ? s.tabOn : s.tab}>LOGIN ACTIVITY</NavLink>
-        </div>
+                <NavLink to="/management/admin"          style={({ isActive }) => isActive ? s.tabOn : s.tab}>ADMIN ACCOUNTS</NavLink>
+                <NavLink to="/management/sessions"       style={({ isActive }) => isActive ? s.tabOn : s.tab}>SESSIONS</NavLink>
+                <NavLink to="/management/login-activity" style={({ isActive }) => isActive ? s.tabOn : s.tab}>LOGIN ACTIVITY</NavLink>
+            </div>
 
-        <div style={s.card}>
-            <Routes>
-            <Route path="admin"          element={<AdminAccounts data={data} onAddAdmin={() => navigate('/management/create-admin')} onDelete={handleDelete} />} />
-            <Route path="sessions"       element={<Sessions data={data} onDelete={handleDelete} />} />
-            <Route path="login-activity" element={<LoginActivity data={data} onDelete={handleDelete} />} />
-            <Route path="create-admin"   element={<CreateAdmin signupList={signupList} data={data} onAdd={(form) => { handleAddAdmin(form); navigate('/management/admin'); }} />} />
-            <Route path="*"              element={<Navigate to="/management/admin" replace />} />
-            </Routes>
-        </div>
+            <div style={s.card}>
+                <Routes>
+                <Route path="admin"          element={<AdminAccounts data={data} onAddAdmin={() => navigate('/management/create-admin')} onDelete={handleDelete} />} />
+                <Route path="sessions"       element={<Sessions data={data} onDelete={handleDelete} />} />
+                <Route path="login-activity" element={<LoginActivity data={data} onDelete={handleDelete} />} />
+                <Route path="create-admin"   element={<CreateAdmin signupList={signupList} data={data} onAdd={(form) => { handleAddAdmin(form); navigate('/management/admin'); }} />} />
+                <Route path="*"              element={<Navigate to="/management/admin" replace />} />
+                </Routes>
+            </div>
         </div>
     </>
     

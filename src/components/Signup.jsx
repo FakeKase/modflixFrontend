@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Background from './Background';
-import logoPic from '../assets/Logo.png';  // ✅ ลบ import Logo และ styles ออก
+import logoPic from '../assets/Logo.png';  
 import closeEye from '../assets/closepassword.png';  
 import openEye  from '../assets/openpassword.png';   
 
