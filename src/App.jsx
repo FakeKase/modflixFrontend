@@ -12,16 +12,10 @@ import CustomerEditPage from './Pages/EditPage/CustomerEditPage.jsx'
 import Background from './Background/Background.jsx'
 import mockProfilePic from './assets/rigbyMockProfilePic.png'
 import AdminProfilePage from './Pages/AdminProfilePage.jsx'
-<<<<<<< HEAD
-<<<<<<< HEAD
 import UserBehaviorPage from './Pages/UserBehaviorPage.jsx';
 import PopularityPage from './Pages/PopularityPage.jsx';
-=======
 import ManagementDashboard from './components/ManagementDashboard.jsx';
 import Signup from './components/Signup.jsx';
-=======
-import ManagementDashboard from './components/ManagementDashboard.jsx'
-import Signup from './components/Signup.jsx'
 
 const mkEps = (count, price) =>
     Array.from({ length: count }, (_, i) => ({
@@ -68,7 +62,6 @@ const INITIAL_CUSTOMERS = [
     { code: 'CU08', name: 'SUGA',     phone: '0123456789', email: 'wow7@gmail.com', country: 'Korea',    dob: '09/03/2537' },
     { code: 'CU09', name: 'Jin',      phone: '0123456789', email: 'wow8@gmail.com', country: 'Korea',    dob: '04/12/2535' },
 ]
->>>>>>> 4c241d6cb2935e6967d1f1ff11978b93b4497cb8
 
 const INITIAL_DATA = [
     { id: '0001', name: 'KIM MINJEONG', role: 'SUPER ADMIN', login: '12/12/24 01:03 PM', email: 'winrina@gmail.com', device: 'Mac',     ip: '203.0.113.1', last: '1 min ago',  risk: 'LOW',    time: 'MAR 23, 10:15', event: 'LOGIN' },
@@ -86,11 +79,6 @@ function LoginRoute({ isLoggedIn, onLogin }) {
         : <LoginPage onLogin={onLogin} onSignup={() => navigate('/signup')} />
 }
 
-<<<<<<< HEAD
->>>>>>> 79c005be059a62dc1808c736fb27850fc4762d01
-
-=======
->>>>>>> 4c241d6cb2935e6967d1f1ff11978b93b4497cb8
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false)
     const [username, setUsername]     = useState('LetmeuseKase')
@@ -145,8 +133,7 @@ function App() {
         <BrowserRouter>
             <Background />
             <Routes>
-<<<<<<< HEAD
-<<<<<<< HEAD
+
                 <Route 
                 path="/reports/users" 
                     element={isLoggedIn
@@ -165,21 +152,14 @@ function App() {
                             : <LoginPage onLogin={() => setIsLoggedIn(true)} />
                     }
                 />
-=======
-=======
-                <Route path="/login"   element={<LoginRoute isLoggedIn={isLoggedIn} onLogin={() => setIsLoggedIn(true)} />} />
                 <Route path="/signup"  element={<Signup onSignup={handleSignup} onLoginSuccess={() => setIsLoggedIn(true)} />} />
                 <Route path="/"        element={isLoggedIn ? <LandingPage {...commonProps} /> : <Navigate to="/login" replace />} />
->>>>>>> 4c241d6cb2935e6967d1f1ff11978b93b4497cb8
 
                 <Route path="/products"           element={isLoggedIn ? <ProductPage  {...commonProps} data={products} /> : <Navigate to="/login" replace />} />
                 <Route path="/products/edit/:code" element={isLoggedIn ? <ProductEditPage  {...commonProps} products={products}  onSave={handleSaveProduct}  /> : <Navigate to="/login" replace />} />
 
                 <Route path="/cast"               element={isLoggedIn ? <CastPage     {...commonProps} data={casts} /> : <Navigate to="/login" replace />} />
                 <Route path="/cast/edit/:code"    element={isLoggedIn ? <CastEditPage {...commonProps} casts={casts} onSave={handleSaveCast} /> : <Navigate to="/login" replace />} />
-
-<<<<<<< HEAD
->>>>>>> 79c005be059a62dc1808c736fb27850fc4762d01
                 <Route
                     path="/"
                     element={
@@ -197,22 +177,6 @@ function App() {
                     }
                 />
                 <Route
-                    path="/cast"
-                    element={
-                        isLoggedIn
-                            ? <CastPage {...commonProps} />
-                            : <Navigate to="/login" replace />
-                    }
-                />
-                <Route
-                    path="/customers"
-                    element={
-                        isLoggedIn
-                            ? <CustomerPage {...commonProps} />
-                            : <Navigate to="/login" replace />
-                    }
-                />
-                <Route
                     path="/admin-profile"
                     element={
                         isLoggedIn
@@ -220,10 +184,8 @@ function App() {
                             : <Navigate to="/login" replace />
                     }
                 />
-=======
                 <Route path="/customers"              element={isLoggedIn ? <CustomerPage     {...commonProps} data={customers} /> : <Navigate to="/login" replace />} />
                 <Route path="/customers/edit/:code"   element={isLoggedIn ? <CustomerEditPage {...commonProps} customers={customers} onSave={handleSaveCustomer} /> : <Navigate to="/login" replace />} />
->>>>>>> 4c241d6cb2935e6967d1f1ff11978b93b4497cb8
 
                 <Route path="/admin-profile" element={isLoggedIn ? <AdminProfilePage {...commonProps} onSave={setUsername} /> : <Navigate to="/login" replace />} />
                 <Route path="/management/*"  element={isLoggedIn
