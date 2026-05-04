@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import TempPage from './TempPage.jsx'
 
 const columns = [
@@ -7,19 +8,9 @@ const columns = [
     { key: 'type',  label: 'TYPE'  },
 ]
 
-const data = [
-    { code: 'P01', name: 'Avatar 1',             price: '200.00', type: 'MOVIE'  },
-    { code: 'P02', name: 'Avatar 2',             price: '200.00', type: 'MOVIE'  },
-    { code: 'P03', name: 'Avatar 3',             price: '200.00', type: 'MOVIE'  },
-    { code: 'P04', name: 'Star War',             price: '150.00', type: 'MOVIE'  },
-    { code: 'P05', name: 'Your name',            price: '150.00', type: 'MOVIE'  },
-    { code: 'P06', name: 'Stranger Things ss1',  price: '300.00', type: 'SERIES' },
-    { code: 'P07', name: 'Itaewon Class',        price: '450.00', type: 'SERIES' },
-    { code: 'P08', name: 'One piece',            price: '450.00', type: 'SERIES' },
-    { code: 'P09', name: 'Blue Lock',            price: '200.00', type: 'SERIES' },
-]
+export default function ProductPage({ pic, username, data = [] }) {
+    const navigate = useNavigate()
 
-export default function ProductPage({ pic, username }) {
     return (
         <TempPage
             pic={pic}
@@ -27,7 +18,7 @@ export default function ProductPage({ pic, username }) {
             title="Products"
             columns={columns}
             data={data}
-            onEdit={(row)   => console.log('Edit',   row)}
+            onEdit={(row)   => navigate(`/products/edit/${row.code}`)}
             onDelete={(row) => console.log('Delete', row)}
             onCreate={()    => console.log('Create new product')}
         />
