@@ -147,9 +147,10 @@ function App() {
                 <Route
                     path="/login"
                     element={
-                        isLoggedIn
-                            ? <Navigate to="/" replace />
-                            : <LoginPage onLogin={() => setIsLoggedIn(true)} />
+                         <LoginRoute
+                            isLoggedIn={isLoggedIn}
+                            onLogin={() => setIsLoggedIn(true)}
+                         />
                     }
                 />
                 <Route path="/signup"  element={<Signup onSignup={handleSignup} onLoginSuccess={() => setIsLoggedIn(true)} />} />
