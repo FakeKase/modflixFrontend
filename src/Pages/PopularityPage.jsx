@@ -13,6 +13,14 @@ const tableData = [
     { genre: 'Fantasy', views: 10020, purchase: 9999  },
     { genre: 'Sci-fi',  views: 2000,  purchase: 1579  },
 ]
+const chartData = [
+    { month: 'Jan', action: 5, drama: 1, fantasy: 4, scifi: 2 },
+    { month: 'Feb', action: 4, drama: 2, fantasy: 3, scifi: 1 },
+    { month: 'Mar', action: 6, drama: 1, fantasy: 5, scifi: 3 },
+    { month: 'Apr', action: 7, drama: 2, fantasy: 6, scifi: 2 },
+    { month: 'May', action: 5, drama: 3, fantasy: 4, scifi: 2 },
+    { month: 'Jun', action: 6, drama: 1, fantasy: 7, scifi: 3 },
+]
 
 
 export default function PopularityPage({ pic, username }) {
