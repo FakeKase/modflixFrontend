@@ -16,6 +16,7 @@ import UserBehaviorPage from './Pages/UserBehaviorPage.jsx';
 import PopularityPage from './Pages/PopularityPage.jsx';
 import ManagementDashboard from './components/ManagementDashboard.jsx';
 import Signup from './components/Signup.jsx';
+import SalesReportPage from './Pages/SalesReportPage.jsx'
 
 const mkEps = (count, price) =>
     Array.from({ length: count }, (_, i) => ({
@@ -144,7 +145,14 @@ function App() {
                     element={isLoggedIn
                             ? <PopularityPage {...commonProps} />
                             : <Navigate to="/login" replace />} />
-                            {/* edit */}
+                <Route path="/reports/sales"
+                    element={
+                        isLoggedIn
+                        ? <SalesReportPage pic={pic} username={username} />
+                        : <Navigate to="/login" replace />
+                }/>
+
+                {/* edit */}
                 <Route
                     path="/login"
                     element={
