@@ -144,6 +144,7 @@ function App() {
                     element={isLoggedIn
                             ? <PopularityPage {...commonProps} />
                             : <Navigate to="/login" replace />} />
+                            {/* edit */}
                 <Route
                     path="/login"
                     element={
