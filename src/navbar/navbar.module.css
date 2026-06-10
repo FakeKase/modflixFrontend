@@ -58,7 +58,7 @@
 }
 
 /* Keep individual class hooks in case you need per-item overrides */
-.home, .product, .cast, .customer, .reports, .management {
+.home, .product, .cast, .customer, .orders, .reports, .management {
     text-decoration: none;
     color: #FFFFFF;
 }

@@ -13,6 +13,7 @@ export default function Navbar({ pic, username = 'Guest' }) {
                     <NavLink to="/products"   className={({ isActive }) => isActive ? styles.active : styles.product}>Products</NavLink>
                     <NavLink to="/cast"       className={({ isActive }) => isActive ? styles.active : styles.cast}>Cast</NavLink>
                     <NavLink to="/customers"  className={({ isActive }) => isActive ? styles.active : styles.customer}>Customers</NavLink>
+                    <NavLink to="/orders"     className={({ isActive }) => isActive ? styles.active : styles.orders}>Orders</NavLink>
 
                     {/* Reports dropdown — keep as li */}
                     <li className={styles.reportList}>

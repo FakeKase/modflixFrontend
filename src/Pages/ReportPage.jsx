@@ -52,7 +52,6 @@ export default function ReportPage({ pic, username, title, filterContent, onRese
                         </tbody>
                     </table>
 
-                    {/* ส่วน chart หรือ metric พิเศษ ใส่ผ่าน children */}
                     {children}
                 </div>
 

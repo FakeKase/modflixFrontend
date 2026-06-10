@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai+Looped:wght@100..900&display=swap');
+
+.page {
+    font-family: 'Noto Sans Thai Looped', sans-serif;
+}
+
+.title {
+    width: fit-content;
+    font-size: clamp(24px, 3vw, 40px);
+    margin-top: 20px;
+    margin-bottom: 45px;
+    margin-left: 9%;
+    color: #FFFFFF;
+}
+
+.container {
+    width: 90%;
+    max-width: 1440px;
+    margin: 0 auto 5%;
+    border-radius: 50px;
+    overflow: hidden;
+    background-color: #FFD7B5;
+    padding: 40px 5%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+/* ── Section card ── */
+.card {
+    background: #fff;
+    border-radius: 24px;
+    padding: 28px 32px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+.cardTitle {
+    font-size: clamp(18px, 1.4vw, 22px);
+    font-weight: 700;
+    color: #FF6B00;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+/* ── Customer select ── */
+.selectRow {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.selectLabel {
+    font-size: clamp(16px, 1.2vw, 18px);
+    color: #595959;
+    font-weight: 600;
+    min-width: 100px;
+}
+
+.select {
+    flex: 1;
+    min-width: 220px;
+    padding: 12px 18px;
+    border-radius: 30px;
+    border: 1.5px solid #ddd;
+    font-size: clamp(16px, 1.2vw, 18px);
+    font-family: inherit;
+    color: #333;
+    background: #fafafa;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.select:focus {
+    border-color: #FF6B00;
+}
+
+/* ── Status select ── */
+.statusRow {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.statusBadge {
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: clamp(14px, 1vw, 16px);
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.statusBadge.pending  { background: #FFF3CD; color: #856404; }
+.statusBadge.paid     { background: #D1FAE5; color: #065F46; }
+.statusBadge.cancelled{ background: #FFE4E4; color: #B91C1C; }
+
+.statusBadge.active.pending   { border-color: #856404; }
+.statusBadge.active.paid      { border-color: #065F46; }
+.statusBadge.active.cancelled { border-color: #B91C1C; }
+
+/* ── Product search ── */
+.searchRow {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.searchInput {
+    flex: 1;
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: 1.5px solid #ddd;
+    font-size: clamp(16px, 1.2vw, 18px);
+    font-family: inherit;
+    outline: none;
+    background: #fafafa;
+    transition: border-color 0.2s;
+}
+
+.searchInput:focus {
+    border-color: #FF6B00;
+}
+
+/* ── Product list (search results) ── */
+.productList {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 260px;
+    overflow-y: auto;
+}
+
+.productItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    border-radius: 14px;
+    background: #FFF5EE;
+    border: 1px solid #F5EDE6;
+    transition: background 0.15s;
+}
+
+.productItem:hover {
+    background: #FFE8D6;
+}
+
+.productInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.productName {
+    font-size: clamp(15px, 1.1vw, 17px);
+    font-weight: 600;
+    color: #333;
+}
+
+.productMeta {
+    font-size: clamp(12px, 0.9vw, 14px);
+    color: #888;
+}
+
+.productPrice {
+    font-size: clamp(15px, 1.1vw, 17px);
+    font-weight: 700;
+    color: #FF6B00;
+    margin-right: 16px;
+}
+
+.addBtn {
+    background: #FF6B00;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 6px 18px;
+    font-size: clamp(13px, 0.9vw, 15px);
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.addBtn:hover {
+    background: #e05e00;
+}
+
+.addBtn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* ── Cart items table ── */
+.cartTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cartTable th {
+    padding: 12px 16px;
+    text-align: left;
+    font-size: clamp(13px, 1vw, 15px);
+    font-weight: 700;
+    color: #595959;
+    border-bottom: 2px solid #F5EDE6;
+    letter-spacing: 0.5px;
+}
+
+.cartTable td {
+    padding: 14px 16px;
+    font-size: clamp(14px, 1.1vw, 16px);
+    color: #333;
+    border-bottom: 1px solid #F5EDE6;
+    vertical-align: middle;
+}
+
+.cartTable tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.cartTable tbody tr:hover td {
+    background: #FFF5EE;
+}
+
+.codeCell {
+    color: #FF6B00;
+    font-weight: 800;
+}
+
+.removeBtn {
+    background: transparent;
+    border: 1.5px solid #FF4444;
+    border-radius: 20px;
+    padding: 4px 14px;
+    color: #FF4444;
+    font-size: clamp(12px, 0.9vw, 14px);
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.removeBtn:hover {
+    background: #FF4444;
+    color: #fff;
+}
+
+.emptyCart {
+    text-align: center;
+    padding: 32px;
+    color: #aaa;
+    font-size: clamp(15px, 1.1vw, 17px);
+}
+
+/* ── Summary row ── */
+.summaryRow {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+    padding-top: 16px;
+    border-top: 2px solid #F5EDE6;
+    margin-top: 8px;
+}
+
+.summaryLabel {
+    font-size: clamp(16px, 1.2vw, 20px);
+    font-weight: 700;
+    color: #595959;
+}
+
+.summaryTotal {
+    font-size: clamp(20px, 1.6vw, 26px);
+    font-weight: 800;
+    color: #FF6B00;
+}
+
+/* ── Action buttons ── */
+.actionRow {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
+}
+
+.saveBtn {
+    background: #FF6B00;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 14px 40px;
+    font-size: clamp(16px, 1.2vw, 18px);
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    box-shadow: 0 6px 20px rgba(255,107,0,0.3);
+}
+
+.saveBtn:hover {
+    background: #e05e00;
+    transform: scale(1.03);
+}
+
+.saveBtn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+.cancelBtn {
+    background: transparent;
+    color: #595959;
+    border: 1.5px solid #595959;
+    border-radius: 30px;
+    padding: 14px 40px;
+    font-size: clamp(16px, 1.2vw, 18px);
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.cancelBtn:hover {
+    background: #595959;
+    color: #fff;
+}

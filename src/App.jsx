@@ -12,11 +12,13 @@ import CustomerEditPage from './Pages/EditPage/CustomerEditPage.jsx'
 import Background from './Background/Background.jsx'
 import mockProfilePic from './assets/rigbyMockProfilePic.png'
 import AdminProfilePage from './Pages/AdminProfilePage.jsx'
-import UserBehaviorPage from './Pages/UserBehaviorPage.jsx';
-import PopularityPage from './Pages/PopularityPage.jsx';
-import ManagementDashboard from './components/ManagementDashboard.jsx';
-import Signup from './components/Signup.jsx';
+import UserBehaviorPage from './Pages/UserBehaviorPage.jsx'
+import PopularityPage from './Pages/PopularityPage.jsx'
+import ManagementDashboard from './components/ManagementDashboard.jsx'
+import Signup from './components/Signup.jsx'
 import SalesReportPage from './Pages/SalesReportPage.jsx'
+import CartPage from './Pages/CartPage.jsx'
+import CartCreatePage from './Pages/CartCreatePage.jsx'
 
 const mkEps = (count, price) =>
     Array.from({ length: count }, (_, i) => ({
@@ -88,6 +90,12 @@ function App() {
     const [products, setProducts]     = useState(INITIAL_PRODUCTS)
     const [casts, setCasts]           = useState(INITIAL_CASTS)
     const [customers, setCustomers]   = useState(INITIAL_CUSTOMERS)
+    const [orders,    setOrders]      = useState([
+        { code: 'OR001', customerCode: 'CU01', customerName: 'Vera',     items: [{ productCode:'P01', productName:'Avatar 1',  type:'MOVIE',  genre:'Sci-Fi',  price:200 }, { productCode:'P05', productName:'Your name', type:'MOVIE', genre:'Romance', price:150 }], total: 350,  date: '01/06/2026', status: 'PAID'      },
+        { code: 'OR002', customerCode: 'CU03', customerName: 'Jungkook', items: [{ productCode:'P06', productName:'Stranger Things ss1', type:'SERIES', genre:'Horror', price:300 }], total: 300, date: '05/06/2026', status: 'PENDING'   },
+        { code: 'OR003', customerCode: 'CU07', customerName: 'V',        items: [{ productCode:'P07', productName:'Itaewon Class', type:'SERIES', genre:'Drama', price:450 }, { productCode:'P09', productName:'Blue Lock', type:'SERIES', genre:'Sports', price:200 }], total: 650, date: '08/06/2026', status: 'PAID'      },
+        { code: 'OR004', customerCode: 'CU02', customerName: 'Ttime',    items: [{ productCode:'P04', productName:'Star War', type:'MOVIE', genre:'Sci-Fi', price:150 }], total: 150, date: '09/06/2026', status: 'CANCELLED' },
+    ])
 
     useEffect(() => {
         document.body.style.overflow = isLoggedIn ? '' : 'hidden'
@@ -115,6 +123,17 @@ function App() {
     const handleSaveCast    = (updated) => setCasts(prev     => prev.map(c => c.code === updated.code ? updated : c))
     const handleSaveCustomer= (updated) => setCustomers(prev => prev.map(c => c.code === updated.code ? updated : c))
 
+    const handleSaveOrder = (order, isEdit) => {
+        if (isEdit) {
+            setOrders(prev => prev.map(o => o.code === order.code ? order : o))
+        } else {
+            setOrders(prev => [...prev, order])
+        }
+    }
+
+    const handleDeleteOrder = (row) =>
+        setOrders(prev => prev.filter(o => o.code !== row.code))
+
     const handleAddAdmin = (newAdmin) => {
         const nextId  = String(data.length + 1).padStart(4, '0')
         const now     = new Date()
@@ -134,68 +153,26 @@ function App() {
         <BrowserRouter>
             <Background />
             <Routes>
-
-                <Route 
-                path="/reports/users" 
-                    element={isLoggedIn
-                            ? <UserBehaviorPage {...commonProps} />
-                            : <Navigate to="/login" replace />
-                            } />
-                <Route path="/reports/popularity" 
-                    element={isLoggedIn
-                            ? <PopularityPage {...commonProps} />
-                            : <Navigate to="/login" replace />} />
-                <Route path="/reports/sales"
-                    element={
-                        isLoggedIn
-                        ? <SalesReportPage pic={pic} username={username} />
-                        : <Navigate to="/login" replace />
-                }/>
-
-                {/* edit */}
-                <Route
-                    path="/login"
-                    element={
-                         <LoginRoute
-                            isLoggedIn={isLoggedIn}
-                            onLogin={() => setIsLoggedIn(true)}
-                         />
-                    }
-                />
+                <Route path="/login"   element={<LoginRoute isLoggedIn={isLoggedIn} onLogin={() => setIsLoggedIn(true)} />} />
                 <Route path="/signup"  element={<Signup onSignup={handleSignup} onLoginSuccess={() => setIsLoggedIn(true)} />} />
                 <Route path="/"        element={isLoggedIn ? <LandingPage {...commonProps} /> : <Navigate to="/login" replace />} />
 
-                <Route path="/products"           element={isLoggedIn ? <ProductPage  {...commonProps} data={products} /> : <Navigate to="/login" replace />} />
-                <Route path="/products/edit/:code" element={isLoggedIn ? <ProductEditPage  {...commonProps} products={products}  onSave={handleSaveProduct}  /> : <Navigate to="/login" replace />} />
+                <Route path="/products"            element={isLoggedIn ? <ProductPage      {...commonProps} data={products} /> : <Navigate to="/login" replace />} />
+                <Route path="/products/edit/:code" element={isLoggedIn ? <ProductEditPage  {...commonProps} products={products} onSave={handleSaveProduct} /> : <Navigate to="/login" replace />} />
 
-                <Route path="/cast"               element={isLoggedIn ? <CastPage     {...commonProps} data={casts} /> : <Navigate to="/login" replace />} />
-                <Route path="/cast/edit/:code"    element={isLoggedIn ? <CastEditPage {...commonProps} casts={casts} onSave={handleSaveCast} /> : <Navigate to="/login" replace />} />
-                <Route
-                    path="/"
-                    element={
-                        isLoggedIn
-                            ? <LandingPage {...commonProps} />
-                            : <Navigate to="/login" replace />
-                    }
-                />
-                <Route
-                    path="/products"
-                    element={
-                        isLoggedIn
-                            ? <ProductPage {...commonProps} />
-                            : <Navigate to="/login" replace />
-                    }
-                />
-                <Route
-                    path="/admin-profile"
-                    element={
-                        isLoggedIn
-                            ? <AdminProfilePage {...commonProps} onSave={(newUsername) => setUsername(newUsername)} />
-                            : <Navigate to="/login" replace />
-                    }
-                />
+                <Route path="/cast"             element={isLoggedIn ? <CastPage     {...commonProps} data={casts} /> : <Navigate to="/login" replace />} />
+                <Route path="/cast/edit/:code"  element={isLoggedIn ? <CastEditPage {...commonProps} casts={casts} onSave={handleSaveCast} /> : <Navigate to="/login" replace />} />
+
                 <Route path="/customers"              element={isLoggedIn ? <CustomerPage     {...commonProps} data={customers} /> : <Navigate to="/login" replace />} />
                 <Route path="/customers/edit/:code"   element={isLoggedIn ? <CustomerEditPage {...commonProps} customers={customers} onSave={handleSaveCustomer} /> : <Navigate to="/login" replace />} />
+
+                <Route path="/orders"            element={isLoggedIn ? <CartPage       {...commonProps} data={orders} onDelete={handleDeleteOrder} /> : <Navigate to="/login" replace />} />
+                <Route path="/orders/create"     element={isLoggedIn ? <CartCreatePage {...commonProps} customers={customers} products={products} orders={orders} onSave={handleSaveOrder} /> : <Navigate to="/login" replace />} />
+                <Route path="/orders/edit/:code" element={isLoggedIn ? <CartCreatePage {...commonProps} customers={customers} products={products} orders={orders} onSave={handleSaveOrder} /> : <Navigate to="/login" replace />} />
+
+                <Route path="/reports/users"      element={isLoggedIn ? <UserBehaviorPage {...commonProps} /> : <Navigate to="/login" replace />} />
+                <Route path="/reports/popularity" element={isLoggedIn ? <PopularityPage   {...commonProps} /> : <Navigate to="/login" replace />} />
+                <Route path="/reports/sales"      element={isLoggedIn ? <SalesReportPage pic={pic} username={username} /> : <Navigate to="/login" replace />} />
 
                 <Route path="/admin-profile" element={isLoggedIn ? <AdminProfilePage {...commonProps} onSave={setUsername} /> : <Navigate to="/login" replace />} />
                 <Route path="/management/*"  element={isLoggedIn
